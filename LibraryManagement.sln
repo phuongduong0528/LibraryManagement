@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagement.DbManager", "LibraryManagement.DbManager\LibraryManagement.DbManager.csproj", "{8B853D79-F480-4282-842C-A1A7918BE23D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibMan", "LibMan\LibMan\LibMan\LibMan.csproj", "{634701AB-0104-4290-AD4D-500D8DBE2FBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B853D79-F480-4282-842C-A1A7918BE23D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B853D79-F480-4282-842C-A1A7918BE23D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B853D79-F480-4282-842C-A1A7918BE23D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B853D79-F480-4282-842C-A1A7918BE23D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{634701AB-0104-4290-AD4D-500D8DBE2FBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{634701AB-0104-4290-AD4D-500D8DBE2FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{634701AB-0104-4290-AD4D-500D8DBE2FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{634701AB-0104-4290-AD4D-500D8DBE2FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00703CE9-F7D9-4F24-9A82-4FFD3E2A666F}
+	EndGlobalSection
+EndGlobal
