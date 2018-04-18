@@ -100,6 +100,7 @@ namespace LibMan
         {
             lblStatus.Visible = true;
             int state = 0; //Ket qua dang nhap 0 - Fail | 1 - OK
+            int userType = -1;
             string pass = Utilities.CalculateHash(txtbMatKhau.Text.Trim() + txtbTaiKhoan.Text.Trim()); //Password hashing
             if (cbxUserType.SelectedItem == null)
             {
@@ -110,17 +111,27 @@ namespace LibMan
 
             //Kiem Tra Dang nhap theo loai ngoi dung
             if (cbxUserType.SelectedIndex == 0)
+            {
                 state = await _loginController.AuthNguoiQL(txtbTaiKhoan.Text, pass);
+                userType = 0;
+            }
             if (cbxUserType.SelectedIndex == 1)
+            {
                 state = await _loginController.AuthThuThu(txtbTaiKhoan.Text, pass);
+                userType = 1;
+            }
             if (cbxUserType.SelectedIndex == 2)
+            {
                 state = await _loginController.AuthDocGia(txtbTaiKhoan.Text, pass);
+                userType = 2;
+            }
             
             //Sau khi kiem tra dang nhap
             if (state == 1)
             {
-                LibMan libMan = new LibMan();
+                LibMan libMan = new LibMan(txtbTaiKhoan.Text);
                 libMan.FormClosed += LibMan_FormClosed;
+                libMan.AlterFeature(userType);
                 libMan.Show();
                 this.Visible = false;
             }

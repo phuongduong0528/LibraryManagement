@@ -13,9 +13,24 @@ namespace LibMan
 {
     public partial class LibMan : Form
     {
+        private string currentUserID;
         public LibMan()
         {
             InitializeComponent();
+        }
+
+        public LibMan(string userid)
+        {
+            InitializeComponent();
+            currentUserID = userid;
+        }
+
+        public void AlterFeature(int userType)
+        {
+            if(userType == 1)
+            {
+                phânQuyềnToolStripMenuItem.Visible = false;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
