@@ -50,13 +50,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\DauSachController.cs" />
+    <Compile Include="Controller\DocGiaController.cs" />
     <Compile Include="Controller\IDauSachController.cs" />
+    <Compile Include="Controller\IDocGiaController.cs" />
     <Compile Include="Controller\ILoginController.cs" />
     <Compile Include="Controller\IQuyenSachController.cs" />
     <Compile Include="Controller\ISinhVienController.cs" />
+    <Compile Include="Controller\ITacGiaController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\QuyenSachController.cs" />
     <Compile Include="Controller\SinhVienController.cs" />
+    <Compile Include="Controller\TacGiaController.cs" />
+    <Compile Include="Controller\Utilities.cs" />
     <Compile Include="Models\DauSach.cs" />
     <Compile Include="Models\DocGia.cs" />
     <Compile Include="Models\DongPhieuMuon.cs" />

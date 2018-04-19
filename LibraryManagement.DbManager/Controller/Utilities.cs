@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibMan
+namespace LibraryManagement.DbManager.Controller
 {
     public class Utilities
     {
@@ -15,7 +15,7 @@ namespace LibMan
             SHA256 hashValue = SHA256.Create();
             byte[] hashByte = hashValue.ComputeHash(inputByte);
             StringBuilder stringBuilder = new StringBuilder();
-            foreach(byte b in hashByte)
+            foreach (byte b in hashByte)
             {
                 stringBuilder.Append(b.ToString("X2").ToLower());
             }

@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.DbManager.Controller
 {
-    interface ISinhVienController
+    interface IDocGiaController
     {
-        bool AddNew(SinhVien sv);
-        bool Edit(SinhVien sv);
-        bool Validate(string msv);
+        bool AddNew(string Msv, int expireYear,string password);
+        bool ChangePassword(string id,string newpassword);
     }
 }
