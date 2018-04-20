@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.DbManager.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,7 @@ namespace LibraryManagement.DbManager.Controller
     {
         void AddNew(string name);
         bool CheckExists(string name);
+        bool AddDescription(int id, string description);
+        List<TacGia> GetByName(string name);
     }
 }

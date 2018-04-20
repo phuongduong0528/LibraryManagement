@@ -44,7 +44,7 @@ namespace LibMan
             sinhVien.GioiTinh = cbbGioitinh.SelectedItem.ToString();
             sinhVien.DiaChi = txtbDiachi.Text;
             sinhVien.SoDT = txtbSDT.Text;
-            if (!_sinhVienController.Validate(sinhVien.MaSV))
+            if (_sinhVienController.Validate(sinhVien.MaSV))
             {
                 MessageBox.Show("MaSV đã tồn tại, bạn hãy nhập lại mã khác");
             }

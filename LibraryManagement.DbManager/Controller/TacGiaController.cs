@@ -15,6 +15,19 @@ namespace LibraryManagement.DbManager.Controller
             _libraryDbContext = new LibraryDbContext();
         }
 
+        public bool AddDescription(int id, string description)
+        {
+            TacGia tacGia = _libraryDbContext.TacGias.SingleOrDefault(tg => tg.ID.Equals(id));
+            if(tacGia != null)
+            {
+                tacGia.ThongTin = description;
+                _libraryDbContext.Entry(tacGia).State = System.Data.Entity.EntityState.Modified;
+                _libraryDbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
         public void AddNew(string name)
         {
             TacGia tacGia = new TacGia();
@@ -35,6 +48,11 @@ namespace LibraryManagement.DbManager.Controller
         public bool CheckExists(string name)
         {
             return _libraryDbContext.TacGias.Any(tg => tg.TenTacGia.Equals(name));
+        }
+
+        public List<TacGia> GetByName(string name)
+        {
+            return _libraryDbContext.TacGias.Where(tg => tg.TenTacGia.Equals(name)).ToList();
         }
     }
 }

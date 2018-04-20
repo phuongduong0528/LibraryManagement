@@ -49,5 +49,20 @@ namespace LibraryManagement.DbManager.Controller
             }
             return false;
         }
+
+        public List<DocGia> GetAll()
+        {
+            return _libraryDbContext.DocGias.ToList();
+        }
+
+        public DocGia GetByID(string id)
+        {
+            return _libraryDbContext.DocGias.SingleOrDefault(dg => dg.ID.Equals(id));
+        }
+
+        public DocGia GetByMsv(string Msv)
+        {
+            return _libraryDbContext.DocGias.SingleOrDefault(dg => dg.SinhVien.MaSV.Equals(Msv));
+        }
     }
 }

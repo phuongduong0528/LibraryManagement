@@ -11,5 +11,8 @@ namespace LibraryManagement.DbManager.Controller
     {
         bool AddNew(string Msv, int expireYear,string password);
         bool ChangePassword(string id,string newpassword);
+        DocGia GetByID(string id);
+        DocGia GetByMsv(string Msv);
+        List<DocGia> GetAll();
     }
 }

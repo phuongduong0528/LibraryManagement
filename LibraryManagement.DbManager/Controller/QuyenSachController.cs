@@ -19,7 +19,7 @@ namespace LibraryManagement.DbManager.Controller
         {
             QuyenSach quyenSach;
             int count = 0;
-            string id = $"{idDauSach} - ";
+            string id = $"{idDauSach}-";
             for(int i = 0; i < numberOfBooks; i++)
             {
                 quyenSach = new QuyenSach();
@@ -32,6 +32,35 @@ namespace LibraryManagement.DbManager.Controller
                 _libraryDbContext.QuyenSaches.Add(quyenSach);
                 _libraryDbContext.SaveChanges();
             }
+        }
+
+        public bool EditStatus(string id, string status, string description)
+        {
+            QuyenSach quyenSach = _libraryDbContext.QuyenSaches.SingleOrDefault(qs => qs.ID.Equals(id));
+            if(quyenSach != null)
+            {
+                quyenSach.TinhTrang = status;
+                quyenSach.MoTa = description;
+                _libraryDbContext.Entry(quyenSach).State = System.Data.Entity.EntityState.Modified;
+                _libraryDbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
+
+        public List<QuyenSach> GetAll()
+        {
+            return _libraryDbContext.QuyenSaches.ToList();
+        }
+
+        public QuyenSach GetById(string id)
+        {
+            return _libraryDbContext.QuyenSaches.SingleOrDefault(qs => qs.ID.Equals(id));
+        }
+
+        public List<QuyenSach> GetByStatus(string status)
+        {
+            return _libraryDbContext.QuyenSaches.Where(qs => qs.TinhTrang.Equals(status)).ToList();
         }
     }
 }

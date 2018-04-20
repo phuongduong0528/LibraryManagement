@@ -37,5 +37,10 @@ namespace LibraryManagement.DbManager.Controller
         {
             throw new NotImplementedException();
         }
+
+        public List<DauSach> GetAll()
+        {
+            return _libraryDbContext.DauSaches.ToList();
+        }
     }
 }

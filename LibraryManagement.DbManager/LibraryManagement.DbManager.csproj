@@ -49,19 +49,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adaptor\DauSachAdaptor.cs" />
+    <Compile Include="Adaptor\DocGiaController.cs" />
     <Compile Include="Controller\DauSachController.cs" />
     <Compile Include="Controller\DocGiaController.cs" />
-    <Compile Include="Controller\IDauSachController.cs" />
-    <Compile Include="Controller\IDocGiaController.cs" />
-    <Compile Include="Controller\ILoginController.cs" />
-    <Compile Include="Controller\IQuyenSachController.cs" />
-    <Compile Include="Controller\ISinhVienController.cs" />
-    <Compile Include="Controller\ITacGiaController.cs" />
+    <Compile Include="Controller\ControllerInterface\IDauSachController.cs" />
+    <Compile Include="Controller\ControllerInterface\IDocGiaController.cs" />
+    <Compile Include="Controller\ControllerInterface\ILoginController.cs" />
+    <Compile Include="Controller\ControllerInterface\INguoiQLController.cs" />
+    <Compile Include="Controller\ControllerInterface\IQuyenSachController.cs" />
+    <Compile Include="Controller\ControllerInterface\ISinhVienController.cs" />
+    <Compile Include="Controller\ControllerInterface\ITacGiaController.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\NguoiQLController.cs" />
     <Compile Include="Controller\QuyenSachController.cs" />
     <Compile Include="Controller\SinhVienController.cs" />
     <Compile Include="Controller\TacGiaController.cs" />
     <Compile Include="Controller\Utilities.cs" />
+    <Compile Include="Dto\DauSachDto.cs" />
+    <Compile Include="Dto\DocGiaDto.cs" />
     <Compile Include="Models\DauSach.cs" />
     <Compile Include="Models\DocGia.cs" />
     <Compile Include="Models\DongPhieuMuon.cs" />
@@ -75,10 +81,7 @@
     <Compile Include="Models\TheLoai.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Adaptor\" />
-    <Folder Include="Dto\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
