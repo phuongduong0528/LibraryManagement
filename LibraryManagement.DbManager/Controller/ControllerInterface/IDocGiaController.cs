@@ -14,5 +14,6 @@ namespace LibraryManagement.DbManager.Controller
         DocGia GetByID(string id);
         DocGia GetByMsv(string Msv);
         List<DocGia> GetAll();
+        List<DocGia> GetByName(string name);
     }
 }

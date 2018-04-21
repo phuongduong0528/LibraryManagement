@@ -53,6 +53,14 @@ namespace LibraryManagement.DbManager.Controller
             return _libraryDbContext.QuyenSaches.ToList();
         }
 
+        public List<QuyenSach> GetBorrowedBooks()
+        {
+            return _libraryDbContext.DongPhieuMuons
+                .Where(dpm => dpm.NgayTraSach.Value == null)
+                .Select(dpm => dpm.QuyenSach)
+                .ToList();
+        }
+
         public QuyenSach GetById(string id)
         {
             return _libraryDbContext.QuyenSaches.SingleOrDefault(qs => qs.ID.Equals(id));

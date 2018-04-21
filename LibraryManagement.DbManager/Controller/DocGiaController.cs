@@ -64,5 +64,14 @@ namespace LibraryManagement.DbManager.Controller
         {
             return _libraryDbContext.DocGias.SingleOrDefault(dg => dg.SinhVien.MaSV.Equals(Msv));
         }
+
+        public List<DocGia> GetByName(string name)
+        {
+            if (!string.IsNullOrEmpty(name))
+            {
+                return _libraryDbContext.DocGias.Where(dg => dg.SinhVien.HoTen.Contains(name)).ToList();
+            }
+            return GetAll();
+        }
     }
 }

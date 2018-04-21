@@ -27,7 +27,7 @@ namespace LibraryManagement.DbManager.Controller
                 quyenSachController.AddBook(dauSach.SoLuong, dauSach.ID);
                 return true;
             }
-            catch(Exception e)
+            catch(Exception ex)
             {
                 return false;
             }
@@ -41,6 +41,24 @@ namespace LibraryManagement.DbManager.Controller
         public List<DauSach> GetAll()
         {
             return _libraryDbContext.DauSaches.ToList();
+        }
+
+        public List<DauSach> GetByFilter(string ten, string theLoai, string tacGia)
+        {
+            List<DauSach> dauSaches = GetAll();
+            if (!string.IsNullOrEmpty(ten))
+            {
+                dauSaches = _libraryDbContext.DauSaches.Where(ds => ds.TenSach.Contains(ten)).ToList();
+            }
+            if (!string.IsNullOrEmpty(ten))
+            {
+                dauSaches = _libraryDbContext.DauSaches.Where(ds => ds.TheLoai.TenTheLoai.Contains(theLoai)).ToList();
+            }
+            if (!string.IsNullOrEmpty(ten))
+            {
+                dauSaches = _libraryDbContext.DauSaches.Where(ds => ds.TacGia.TenTacGia.Contains(tacGia)).ToList();
+            }
+            return dauSaches;
         }
     }
 }

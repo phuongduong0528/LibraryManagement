@@ -12,5 +12,6 @@ namespace LibraryManagement.DbManager.Controller
         bool AddNew(DauSach dauSach);
         bool Edit(DauSach dauSach);
         List<DauSach> GetAll();
+        List<DauSach> GetByFilter(string ten,string theLoai, string tacGia);
     }
 }

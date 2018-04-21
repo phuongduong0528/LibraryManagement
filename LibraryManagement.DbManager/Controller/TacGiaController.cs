@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.DbManager.Controller
 {
-    class TacGiaController : ITacGiaController
+    public class TacGiaController : ITacGiaController
     {
         private LibraryDbContext _libraryDbContext;
         public TacGiaController()
