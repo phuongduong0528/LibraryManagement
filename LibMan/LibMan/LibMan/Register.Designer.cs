@@ -234,11 +234,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(367, 9);
+            this.label8.Location = new System.Drawing.Point(367, 7);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(152, 21);
+            this.label8.Size = new System.Drawing.Size(197, 30);
             this.label8.TabIndex = 0;
             this.label8.Text = "Thêm mới bạn đọc";
             // 

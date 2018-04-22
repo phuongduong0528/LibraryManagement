@@ -12,6 +12,8 @@ namespace LibraryManagement.DbManager.Controller
         void AddNew(string name);
         bool CheckExists(string name);
         bool AddDescription(int id, string description);
-        List<TacGia> GetByName(string name);
+        int FindId(string name);
+        List<TacGia> GetAll();
+        List<string> FindByName(string name);
     }
 }

@@ -60,5 +60,15 @@ namespace LibraryManagement.DbManager.Controller
             }
             return dauSaches;
         }
+
+        public List<string> GetTheLoai()
+        {
+            List<string> theLoais = new List<string>();
+            foreach(TheLoai tl in _libraryDbContext.TheLoais)
+            {
+                theLoais.Add(tl.TenTheLoai);
+            }
+            return theLoais;
+        }
     }
 }

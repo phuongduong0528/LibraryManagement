@@ -15,5 +15,6 @@ namespace LibraryManagement.DbManager.Controller
         List<QuyenSach> GetAll();
         List<QuyenSach> GetByStatus(string status);
         List<QuyenSach> GetBorrowedBooks();
+        List<QuyenSach> GetAvailable(int idDauSach, int soLuong);
     }
 }

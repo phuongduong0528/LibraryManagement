@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.DbManager.Controller
 {
-    class DongPhieuMuonController : IDongPhieuMuonController
+    public class DongPhieuMuonController : IDongPhieuMuonController
     {
         private LibraryDbContext _libraryDbContext;
         public DongPhieuMuonController()
@@ -47,7 +47,7 @@ namespace LibraryManagement.DbManager.Controller
             return _libraryDbContext.DongPhieuMuons.Where(dpm => dpm.PhieuMuon.DocGia.SinhVien.MaSV.Equals(msv)).ToList();
         }
 
-        public bool NewLine(string idPhieuMuon, List<string> idQuyenSachs)
+        public bool NewLine(int idPhieuMuon, List<string> idQuyenSachs)
         {
             DongPhieuMuon dpm;
             try
@@ -57,6 +57,7 @@ namespace LibraryManagement.DbManager.Controller
                     dpm = new DongPhieuMuon();
                     dpm.ID = _libraryDbContext.DongPhieuMuons.Count() + 1;
                     dpm.IDQuyenSach = idquyensach;
+                    dpm.IDPhieuMuon = idPhieuMuon;
                     dpm.TinhTrangSachTra = "";
                     dpm.NoiDungPhat = "";
                     _libraryDbContext.DongPhieuMuons.Add(dpm);

@@ -53,6 +53,12 @@ namespace LibraryManagement.DbManager.Controller
             return _libraryDbContext.QuyenSaches.ToList();
         }
 
+        public List<QuyenSach> GetAvailable(int idDauSach, int soLuong)
+        {
+            return _libraryDbContext.QuyenSaches.Where(qs => qs.IDDauSach.Equals(idDauSach) 
+            && !GetBorrowedBooks().Contains(qs)).ToList();
+        }
+
         public List<QuyenSach> GetBorrowedBooks()
         {
             return _libraryDbContext.DongPhieuMuons

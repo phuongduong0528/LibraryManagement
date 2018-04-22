@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.DbManager.Controller
 {
-    class PhieuMuonController : IPhieuMuonController
+    public class PhieuMuonController : IPhieuMuonController
     {
         private LibraryDbContext _libraryDbContext;
         public PhieuMuonController()

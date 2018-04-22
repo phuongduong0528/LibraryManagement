@@ -9,19 +9,19 @@ namespace LibraryManagement.DbManager.Dto
 {
     public class DocGiaDto
     {
-        [DisplayName("Ma DG")]
+        [DisplayName("Mã ĐG")]
         public string Id { get; set; }
 
-        [DisplayName("Ma DG")]
+        [DisplayName("Mã SV")]
         public string MaSV { get; set; }
 
-        [DisplayName("Ma DG")]
+        [DisplayName("Ngày Đăng Kí")]
         public string NgayDangKi { get; set; }
 
-        [DisplayName("Ma DG")]
+        [DisplayName("Hạn thẻ")]
         public string HanThe { get; set; }
 
-        [DisplayName("Ma DG")]
+        [DisplayName("Má Trạng thái")]
         public string TrangThai { get; set; }
     }
 }

@@ -13,5 +13,6 @@ namespace LibraryManagement.DbManager.Controller
         bool Edit(DauSach dauSach);
         List<DauSach> GetAll();
         List<DauSach> GetByFilter(string ten,string theLoai, string tacGia);
+        List<string> GetTheLoai();
     }
 }
