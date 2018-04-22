@@ -55,8 +55,7 @@ namespace LibraryManagement.DbManager.Controller
 
         public List<QuyenSach> GetAvailable(int idDauSach, int soLuong)
         {
-            return _libraryDbContext.QuyenSaches.Where(qs => qs.IDDauSach.Equals(idDauSach) 
-            && !GetBorrowedBooks().Contains(qs)).ToList();
+            throw new Exception();
         }
 
         public List<QuyenSach> GetBorrowedBooks()
@@ -75,6 +74,11 @@ namespace LibraryManagement.DbManager.Controller
         public List<QuyenSach> GetByStatus(string status)
         {
             return _libraryDbContext.QuyenSaches.Where(qs => qs.TinhTrang.Equals(status)).ToList();
+        }
+
+        public bool IsBorrowed(string id)
+        {
+            return GetBorrowedBooks().Any(b => b.ID.Equals(id));
         }
     }
 }

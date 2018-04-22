@@ -119,6 +119,7 @@
             this.giaTxb.Name = "giaTxb";
             this.giaTxb.Size = new System.Drawing.Size(273, 29);
             this.giaTxb.TabIndex = 6;
+            this.giaTxb.TextChanged += new System.EventHandler(this.giaTxb_TextChanged);
             this.giaTxb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.giaTxb_KeyPress);
             // 
             // soluongTxb

@@ -11,6 +11,7 @@ namespace LibraryManagement.DbManager.Controller
     {
         void AddBook(int count, int idDauSach);
         bool EditStatus(string id, string status, string description);
+        bool IsBorrowed(string id);
         QuyenSach GetById(string id);
         List<QuyenSach> GetAll();
         List<QuyenSach> GetByStatus(string status);

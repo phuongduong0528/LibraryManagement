@@ -10,7 +10,7 @@ namespace LibraryManagement.DbManager.Controller.ControllerInterface
     interface IDongPhieuMuonController
     {
         bool NewLine(int idPhieuMuon,List<string> idQuyenSachs);
-        bool EditLine(string idPhieuMuon, string idQuyenSach, 
+        bool EditLine(int idPhieuMuon, string idQuyenSach, 
             DateTime ngayTra,string tinhTrang,string NoiDung,int tienPhat);
         bool Check(string idPhieuMuon, string idQuyenSach);
         List<DongPhieuMuon> GetByDocGia(string idDocGia);

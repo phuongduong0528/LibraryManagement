@@ -80,5 +80,10 @@ namespace LibMan
                 e.Handled = true;
             }
         }
+
+        private void giaTxb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
