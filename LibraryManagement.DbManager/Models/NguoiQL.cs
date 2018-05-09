@@ -22,6 +22,9 @@ namespace LibraryManagement.DbManager.Models
         [StringLength(30)]
         public string HoTen { get; set; }
 
+        [Column(TypeName = "date")]
+        public DateTime NgaySinh { get; set; }
+
         [Required]
         [StringLength(7)]
         public string GioiTinh { get; set; }

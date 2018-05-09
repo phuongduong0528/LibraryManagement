@@ -76,6 +76,15 @@
     <Compile Include="Dto\DocGiaDto.cs" />
     <Compile Include="Dto\DongPhieuMuonDto.cs" />
     <Compile Include="Dto\PhieuMuonDto.cs" />
+    <Compile Include="Migrations\201805010752417_Init.cs" />
+    <Compile Include="Migrations\201805010752417_Init.Designer.cs">
+      <DependentUpon>201805010752417_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805010755420_AddColumn_NgaySinh_T_NQL.cs" />
+    <Compile Include="Migrations\201805010755420_AddColumn_NgaySinh_T_NQL.Designer.cs">
+      <DependentUpon>201805010755420_AddColumn_NgaySinh_T_NQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DauSach.cs" />
     <Compile Include="Models\DocGia.cs" />
     <Compile Include="Models\DongPhieuMuon.cs" />
@@ -89,7 +98,14 @@
     <Compile Include="Models\TheLoai.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201805010752417_Init.resx">
+      <DependentUpon>201805010752417_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805010755420_AddColumn_NgaySinh_T_NQL.resx">
+      <DependentUpon>201805010755420_AddColumn_NgaySinh_T_NQL.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
