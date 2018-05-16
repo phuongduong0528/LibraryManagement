@@ -9,10 +9,13 @@ namespace LibraryManagement.DbManager.Controller
 {
     interface IDauSachController
     {
-        bool AddNew(DauSach dauSach);
+        bool Add(DauSach dauSach);
         bool Edit(DauSach dauSach);
+        bool Remove(int id, bool delForeignKey);
+        DauSach GetById(int id);
         List<DauSach> GetAll();
         List<DauSach> GetByFilter(string ten,string theLoai, string tacGia);
+        List<DauSach> SearchByName(string searchStr);
         List<string> GetTheLoai();
     }
 }

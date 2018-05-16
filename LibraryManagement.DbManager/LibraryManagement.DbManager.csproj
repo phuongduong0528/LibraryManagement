@@ -50,11 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adaptor\DauSachAdaptor.cs" />
-    <Compile Include="Adaptor\DocGiaController.cs" />
+    <Compile Include="Adaptor\DocGiaAdaptor.cs" />
     <Compile Include="Adaptor\DongPhieuMuonAdaptor.cs" />
     <Compile Include="Adaptor\PhieuMuonAdaptor.cs" />
     <Compile Include="Controller\ControllerInterface\IDongPhieuMuonController.cs" />
+    <Compile Include="Controller\ControllerInterface\INhaXuatBanController.cs" />
     <Compile Include="Controller\ControllerInterface\IPhieuMuonController.cs" />
+    <Compile Include="Controller\ControllerInterface\ITheLoaiController.cs" />
     <Compile Include="Controller\DauSachController.cs" />
     <Compile Include="Controller\DocGiaController.cs" />
     <Compile Include="Controller\ControllerInterface\IDauSachController.cs" />
@@ -67,10 +69,12 @@
     <Compile Include="Controller\DongPhieuMuonController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\NguoiQLController.cs" />
+    <Compile Include="Controller\NhaXuatBanController.cs" />
     <Compile Include="Controller\PhieuMuonController.cs" />
     <Compile Include="Controller\QuyenSachController.cs" />
     <Compile Include="Controller\SinhVienController.cs" />
     <Compile Include="Controller\TacGiaController.cs" />
+    <Compile Include="Controller\TheLoaiController.cs" />
     <Compile Include="Controller\Utilities.cs" />
     <Compile Include="Dto\DauSachDto.cs" />
     <Compile Include="Dto\DocGiaDto.cs" />

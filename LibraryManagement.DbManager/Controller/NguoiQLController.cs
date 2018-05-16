@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.DbManager.Controller
 {
-    class NguoiQLController : INguoiQLController
+    public class NguoiQLController : INguoiQLController
     {
         private LibraryDbContext _libraryDbContext;
         public NguoiQLController()
@@ -47,6 +47,20 @@ namespace LibraryManagement.DbManager.Controller
                 return true;
             }
             return false;
+        }
+
+        public List<NguoiQL> GetAllNguoiQL()
+        {
+            return _libraryDbContext.NguoiQLs.ToList();
+        }
+
+        public List<string> ListId(string searchStr)
+        {
+            return _libraryDbContext.NguoiQLs
+                .Where(nql => nql.ID.Contains(searchStr))
+                .Select(nql=>nql.ID)
+                .Take(10)
+                .ToList();
         }
     }
 }

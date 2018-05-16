@@ -18,20 +18,23 @@ namespace LibraryManagement.DbManager.Controller
             _quyenSachController = new QuyenSachController();
         }
 
-        public bool Check(string idPhieuMuon, string idQuyenSach)
+        public bool CheckDuplicateBooks(string idPhieuMuon, string idQuyenSach)
         {
             return _libraryDbContext.DongPhieuMuons.Where(dpm => dpm.IDPhieuMuon.Equals(idPhieuMuon))
             .Any(dpm2 => dpm2.IDQuyenSach.Equals(idQuyenSach));
         }
 
-        public bool EditLine(int idPhieuMuon,string idQuyenSach,DateTime ngayTra, string tinhTrang, string NoiDung, int tienPhat)
+        public bool Edit(int idPhieuMuon,int iddongphieu,DateTime ngayTra, string tinhTrang, string NoiDung, int tienPhat)
         {
             DongPhieuMuon dongPhieuMuon = _libraryDbContext.DongPhieuMuons.SingleOrDefault(dpm => dpm.IDPhieuMuon == idPhieuMuon
-            && dpm.IDQuyenSach.Equals(idQuyenSach));
+            && dpm.ID == iddongphieu);
             if(dongPhieuMuon != null)
             {
+                QuyenSach qs = new QuyenSach();
+                qs = _quyenSachController.GetById(dongPhieuMuon.IDQuyenSach);
                 dongPhieuMuon.NgayTraSach = ngayTra;
                 dongPhieuMuon.TinhTrangSachTra = tinhTrang;
+                qs.TinhTrang = tinhTrang;
                 dongPhieuMuon.NoiDungPhat = NoiDung;
                 dongPhieuMuon.TienPhat = tienPhat;
                 _libraryDbContext.Entry(dongPhieuMuon).State = System.Data.Entity.EntityState.Modified;
@@ -41,17 +44,33 @@ namespace LibraryManagement.DbManager.Controller
             return false;
         }
 
-        public List<DongPhieuMuon> GetByDocGia(string idDocGia)
+        public List<DongPhieuMuon> GetListByDocGia(string idDocGia)
         {
-            return _libraryDbContext.DongPhieuMuons.Where(dpm => dpm.PhieuMuon.DocGia.ID.Equals(idDocGia)).ToList();
+            return _libraryDbContext
+                .DongPhieuMuons
+                .Where(dpm => dpm.PhieuMuon.DocGia.ID.Equals(idDocGia))
+                .ToList();
         }
 
-        public List<DongPhieuMuon> GetByMaSinhVien(string msv)
+        public List<DongPhieuMuon> GetListByMaSinhVien(string msv)
         {
             return _libraryDbContext.DongPhieuMuons.Where(dpm => dpm.PhieuMuon.DocGia.SinhVien.MaSV.Equals(msv)).ToList();
         }
 
-        public bool NewLine(int idPhieuMuon, List<string> idQuyenSachs)
+        public List<DongPhieuMuon> GetListByPhieuMuon(int idPhieuMuon)
+        {
+            return _libraryDbContext.DongPhieuMuons.Where(dpm => dpm.IDPhieuMuon == idPhieuMuon).ToList();
+        }
+
+        public List<DongPhieuMuon> GetListCurrentlyBookedBooks(string idDocGia)
+        {
+            return _libraryDbContext
+                .DongPhieuMuons
+                .Where(dpm => dpm.PhieuMuon.DocGia.ID.Equals(idDocGia) && dpm.NgayTraSach.Value == null)
+                .ToList();
+        }
+
+        public bool Add(int idPhieuMuon, List<string> idQuyenSachs)
         {
             DongPhieuMuon dpm;
             try
@@ -77,6 +96,20 @@ namespace LibraryManagement.DbManager.Controller
             {
                 return false;
             }
+        }
+
+        public bool ResetMoney(int iddongphieu)
+        {
+            DongPhieuMuon dongPhieuMuon = _libraryDbContext.DongPhieuMuons.SingleOrDefault(dpm => dpm.IDPhieuMuon == iddongphieu
+            && dpm.ID == iddongphieu);
+            if (dongPhieuMuon != null)
+            {
+                dongPhieuMuon.TienPhat = 0;
+                _libraryDbContext.Entry(dongPhieuMuon).State = System.Data.Entity.EntityState.Modified;
+                _libraryDbContext.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

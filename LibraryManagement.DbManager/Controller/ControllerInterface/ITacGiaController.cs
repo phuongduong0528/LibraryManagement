@@ -9,11 +9,15 @@ namespace LibraryManagement.DbManager.Controller
 {
     interface ITacGiaController
     {
-        void AddNew(string name);
+        void Add(string name);
+        void Add(string name, string description);
         bool CheckExists(string name);
-        bool AddDescription(int id, string description);
-        int FindId(string name);
+        bool Edit(int id, string description);
+        bool Remove(int id);
+        int FindIdByName(string name);
+        int GetIdByName(string name);
+        TacGia GetById(int id);
         List<TacGia> GetAll();
-        List<string> FindByName(string name);
+        List<string> SearchByName(string name);
     }
 }

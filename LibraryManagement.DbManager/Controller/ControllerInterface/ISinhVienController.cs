@@ -9,8 +9,9 @@ namespace LibraryManagement.DbManager.Controller
 {
     interface ISinhVienController
     {
-        bool AddNew(SinhVien sv);
+        bool Add(SinhVien sv);
         bool Edit(SinhVien sv);
-        bool Validate(string msv);
+        bool Remove(string msv, bool delForeignKey);
+        bool CheckMSV(string msv);
     }
 }

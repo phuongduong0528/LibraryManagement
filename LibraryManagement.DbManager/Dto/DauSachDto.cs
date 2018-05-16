@@ -15,6 +15,9 @@ namespace LibraryManagement.DbManager.Dto
         [DisplayName("Tên sách")]
         public string TenSach { get; set; }
 
+        [DisplayName("Số lượng còn")]
+        public int SoLuongConLai { get; set; }
+
         [DisplayName("Tác giả")]
         public string TacGia { get; set; }
 

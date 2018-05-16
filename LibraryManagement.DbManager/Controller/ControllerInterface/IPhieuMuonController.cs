@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.DbManager.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,8 @@ namespace LibraryManagement.DbManager.Controller.ControllerInterface
 {
     interface IPhieuMuonController
     {
-        bool AddNew(string IdNql, string IdDocGia,DateTime HanTra);
+        int Add(string IdNql, string IdDocGia,DateTime HanTra);
+        PhieuMuon GetById(int id);
+        List<int> GetId(string searchStr);
     }
 }

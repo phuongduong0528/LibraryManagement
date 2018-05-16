@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibraryManagement.DbManager.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,7 @@ namespace LibraryManagement.DbManager.Controller
     {
         bool ChangeRole(string id, bool role);
         bool ChangePassword(string id, string newpassword);
+        List<NguoiQL> GetAllNguoiQL();
+        List<string> ListId(string searchStr);
     }
 }

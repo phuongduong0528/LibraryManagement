@@ -15,6 +15,21 @@ namespace LibraryManagement.DbManager.Dto
         [DisplayName("Mã SV")]
         public string MaSV { get; set; }
 
+        [DisplayName("Tên")]
+        public string Ten { get; set; }
+
+        [DisplayName("Ngày sinh")]
+        public string NgaySinh { get; set; }
+        
+        [DisplayName("Giới tính")]
+        public string GioiTinh { get; set; }
+
+        [DisplayName("Địa chỉ")]
+        public string DiaChi { get; set; }
+
+        [DisplayName("SĐT")]
+        public string SoDT { get; set; }
+
         [DisplayName("Ngày Đăng Kí")]
         public string NgayDangKi { get; set; }
 

@@ -9,13 +9,18 @@ using System.Threading.Tasks;
 
 namespace LibraryManagement.DbManager.Adaptor
 {
-    public class DocGiaController
+    public class DocGiaAdaptor
     {
         public static DocGiaDto GetDocGiaDto(DocGia docGia)
         {
             DocGiaDto docGiaDto = new DocGiaDto();
             docGiaDto.Id = docGia.ID;
             docGiaDto.MaSV = docGia.SinhVien.MaSV;
+            docGiaDto.Ten = docGia.SinhVien.HoTen;
+            docGiaDto.NgaySinh = docGia.SinhVien.NgaySinh.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture); ;
+            docGiaDto.GioiTinh = docGia.SinhVien.GioiTinh;
+            docGiaDto.DiaChi = docGia.SinhVien.DiaChi;
+            docGiaDto.SoDT = docGia.SinhVien.SoDT;
             docGiaDto.NgayDangKi = docGia.NgayDangKi.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
             docGiaDto.HanThe = docGia.HanTheThuVien.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
             docGiaDto.TrangThai = docGia.TrangThai;

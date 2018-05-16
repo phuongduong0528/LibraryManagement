@@ -15,7 +15,7 @@ namespace LibraryManagement.DbManager.Controller
             _libraryDbContext = new LibraryDbContext();
         }
 
-        public bool AddDescription(int id, string description)
+        public bool Edit(int id, string description)
         {
             TacGia tacGia = _libraryDbContext.TacGias.SingleOrDefault(tg => tg.ID.Equals(id));
             if(tacGia != null)
@@ -28,7 +28,7 @@ namespace LibraryManagement.DbManager.Controller
             return false;
         }
 
-        public void AddNew(string name)
+        public void Add(string name)
         {
             TacGia tacGia = new TacGia();
             if(_libraryDbContext.TacGias.Count() == 0)
@@ -53,26 +53,51 @@ namespace LibraryManagement.DbManager.Controller
             _libraryDbContext.SaveChanges();
         }
 
+        public void Add(string name, string description)
+        {
+            TacGia tacGia = new TacGia();
+            if (_libraryDbContext.TacGias.Count() == 0)
+            {
+                tacGia.ID = 1;
+            }
+            else
+            {
+                tacGia.ID = _libraryDbContext.TacGias.Max(tg => tg.ID) + 1;
+            }
+            if (_libraryDbContext.TacGias.Any(tg => tg.TenTacGia.Equals(name)))
+            {
+                int i = _libraryDbContext.TacGias.Where(tg => tg.TenTacGia.Equals(name)).Count();
+                tacGia.TenTacGia = name + $"({i + 1})";
+            }
+            else
+            {
+                tacGia.TenTacGia = name;
+            }
+            tacGia.ThongTin = description;
+            _libraryDbContext.TacGias.Add(tacGia);
+            _libraryDbContext.SaveChanges();
+        }
+
         public bool CheckExists(string name)
         {
             return _libraryDbContext.TacGias.Any(tg => tg.TenTacGia.Equals(name));
         }
 
-        public List<string> FindByName(string name)
+        public List<string> SearchByName(string name)
         {
             List<string> tgs = new List<string>();
             IQueryable<TacGia> tacGias = _libraryDbContext.TacGias
                 .Where(tg => tg.TenTacGia.ToLower()
                 .Contains(name.ToLower()))
                 .Take(4);
-            foreach(TacGia tg in tacGias)
+            foreach (TacGia tg in tacGias)
             {
                 tgs.Add(tg.TenTacGia);
             }
             return tgs;
         }
 
-        public int FindId(string name)
+        public int FindIdByName(string name)
         {
             TacGia tacGia = _libraryDbContext.TacGias.SingleOrDefault(tg => tg.TenTacGia.Equals(name));
             return tacGia == null ? -1 : tacGia.ID;
@@ -83,6 +108,29 @@ namespace LibraryManagement.DbManager.Controller
             return _libraryDbContext.TacGias.ToList();
         }
 
+        public TacGia GetById(int id)
+        {
+            return _libraryDbContext.TacGias.SingleOrDefault(tg => tg.ID == id);
+        }
 
+        public int GetIdByName(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Remove(int id)
+        {
+            try
+            {
+                TacGia tacGia = GetById(id);
+                _libraryDbContext.TacGias.Remove(tacGia);
+                _libraryDbContext.SaveChanges();
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

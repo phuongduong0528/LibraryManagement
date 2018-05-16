@@ -16,7 +16,7 @@ namespace LibraryManagement.DbManager.Controller
             _libraryDbContext = new LibraryDbContext();
         }
 
-        public bool AddNew(string IdNql, string IdDocGia, DateTime HanTra)
+        public int Add(string IdNql, string IdDocGia, DateTime HanTra)
         {
             try
             {
@@ -28,12 +28,26 @@ namespace LibraryManagement.DbManager.Controller
                 phieuMuon.HanTraSach = HanTra;
                 _libraryDbContext.PhieuMuons.Add(phieuMuon);
                 _libraryDbContext.SaveChanges();
-                return true;
+                return phieuMuon.ID;
             }
             catch(Exception ex)
             {
-                return false;
+                return -1;
             }
+        }
+
+        public PhieuMuon GetById(int id)
+        {
+            return _libraryDbContext.PhieuMuons.SingleOrDefault(pm => pm.ID == id);
+        }
+
+        public List<int> GetId(string searchStr)
+        {
+            return _libraryDbContext
+                .PhieuMuons
+                .Select(pm => pm.ID)
+                .Take(20)
+                .ToList();
         }
     }
 }

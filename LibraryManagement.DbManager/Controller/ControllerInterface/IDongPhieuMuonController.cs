@@ -9,11 +9,14 @@ namespace LibraryManagement.DbManager.Controller.ControllerInterface
 {
     interface IDongPhieuMuonController
     {
-        bool NewLine(int idPhieuMuon,List<string> idQuyenSachs);
-        bool EditLine(int idPhieuMuon, string idQuyenSach, 
+        bool Add(int idPhieuMuon,List<string> idQuyenSachs);
+        bool Edit(int idPhieuMuon, int iddongphieu, 
             DateTime ngayTra,string tinhTrang,string NoiDung,int tienPhat);
-        bool Check(string idPhieuMuon, string idQuyenSach);
-        List<DongPhieuMuon> GetByDocGia(string idDocGia);
-        List<DongPhieuMuon> GetByMaSinhVien(string msv);
+        bool CheckDuplicateBooks(string idPhieuMuon, string idQuyenSach); //NOT USE
+        bool ResetMoney(int iddongphieu); //Đã nộp phạt
+        List<DongPhieuMuon> GetListByPhieuMuon(int idPhieuMuon);
+        List<DongPhieuMuon> GetListByDocGia(string idDocGia);
+        List<DongPhieuMuon> GetListByMaSinhVien(string msv);
+        List<DongPhieuMuon> GetListCurrentlyBookedBooks(string idDocGia);
     }
 }

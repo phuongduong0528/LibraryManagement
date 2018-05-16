@@ -16,7 +16,7 @@ namespace LibraryManagement.DbManager.Controller
             _libraryDbContext = new LibraryDbContext();
         }
 
-        public bool AddNew(DauSach dauSach)
+        public bool Add(DauSach dauSach)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace LibraryManagement.DbManager.Controller
                 _libraryDbContext.DauSaches.Add(dauSach);
                 _libraryDbContext.SaveChanges();
                 QuyenSachController quyenSachController = new QuyenSachController();
-                quyenSachController.AddBook(dauSach.SoLuong, dauSach.ID);
+                quyenSachController.Add(dauSach.SoLuong, dauSach.ID);
                 return true;
             }
             catch(Exception ex)
@@ -35,7 +35,26 @@ namespace LibraryManagement.DbManager.Controller
 
         public bool Edit(DauSach dauSach)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DauSach ds = _libraryDbContext.DauSaches.SingleOrDefault(ds1 => ds1.ID == dauSach.ID);
+                ds.IDTacGia = dauSach.IDTacGia;
+                ds.IDTheLoai = dauSach.IDTheLoai;
+                ds.IDNhaXuatBan = dauSach.IDNhaXuatBan;
+                ds.TenSach = dauSach.TenSach;
+                ds.SoLuong = dauSach.SoLuong;
+                ds.NamXuatBan = dauSach.NamXuatBan;
+                ds.GiaThanh = dauSach.GiaThanh;
+                ds.KeSach = dauSach.KeSach;
+                ds.TrangThai = dauSach.TrangThai;
+                _libraryDbContext.Entry(ds).State = System.Data.Entity.EntityState.Modified;
+                _libraryDbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public List<DauSach> GetAll()
@@ -48,17 +67,30 @@ namespace LibraryManagement.DbManager.Controller
             List<DauSach> dauSaches = GetAll();
             if (!string.IsNullOrEmpty(ten))
             {
-                dauSaches = _libraryDbContext.DauSaches.Where(ds => ds.TenSach.Contains(ten)).ToList();
+                dauSaches = _libraryDbContext.DauSaches.Where(ds => ds.TenSach.Contains(ten)).Take(100).ToList();
             }
             if (!string.IsNullOrEmpty(ten))
             {
-                dauSaches = _libraryDbContext.DauSaches.Where(ds => ds.TheLoai.TenTheLoai.Contains(theLoai)).ToList();
+                dauSaches = _libraryDbContext.DauSaches.Where(ds => ds.TheLoai.TenTheLoai.Contains(theLoai)).Take(100).ToList();
             }
             if (!string.IsNullOrEmpty(ten))
             {
-                dauSaches = _libraryDbContext.DauSaches.Where(ds => ds.TacGia.TenTacGia.Contains(tacGia)).ToList();
+                dauSaches = _libraryDbContext.DauSaches.Where(ds => ds.TacGia.TenTacGia.Contains(tacGia)).Take(100).ToList();
             }
             return dauSaches;
+        }
+
+        public DauSach GetById(int id)
+        {
+            return _libraryDbContext.DauSaches.SingleOrDefault(ds => ds.ID == id);
+        }
+
+        public List<DauSach> SearchByName(string searchStr)
+        {
+            return _libraryDbContext.DauSaches
+                .Where(ds => ds.TenSach.Contains(searchStr))
+                .Take(100)
+                .ToList();
         }
 
         public List<string> GetTheLoai()
@@ -69,6 +101,26 @@ namespace LibraryManagement.DbManager.Controller
                 theLoais.Add(tl.TenTheLoai);
             }
             return theLoais;
+        }
+
+        public bool Remove(int id, bool delForeignKey)
+        {
+            try
+            {
+                DauSach ds1 = GetById(id);
+                _libraryDbContext.DauSaches.Remove(ds1);
+                if (delForeignKey)
+                {
+                    IQueryable<QuyenSach> quyensachs = _libraryDbContext.QuyenSaches.Where(qs => qs.IDDauSach == id);
+                    _libraryDbContext.QuyenSaches.RemoveRange(quyensachs);
+                }
+                _libraryDbContext.SaveChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

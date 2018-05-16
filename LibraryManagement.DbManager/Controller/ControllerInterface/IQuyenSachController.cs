@@ -9,13 +9,17 @@ namespace LibraryManagement.DbManager.Controller
 {
     interface IQuyenSachController
     {
-        void AddBook(int count, int idDauSach);
-        bool EditStatus(string id, string status, string description);
+        void Add(int count, int idDauSach);
+        bool Edit(string id, string status, string description);
+        bool Remove(string id);
+        bool RemoveRange(List<QuyenSach> quyenSaches);
         bool IsBorrowed(string id);
         QuyenSach GetById(string id);
         List<QuyenSach> GetAll();
         List<QuyenSach> GetByStatus(string status);
         List<QuyenSach> GetBorrowedBooks();
         List<QuyenSach> GetAvailable(int idDauSach, int soLuong);
+        List<QuyenSach> GetAvailable(int idDauSach);
+        int GetAvailableBooksCount(int idDauSach);
     }
 }

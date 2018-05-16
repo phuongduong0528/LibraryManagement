@@ -16,7 +16,7 @@ namespace LibraryManagement.DbManager.Controller
             _libraryDbContext = new LibraryDbContext();
         }
 
-        public bool AddNew(string Msv,int expireYear,string password)
+        public bool Add(string Msv,int expireYear,string password)
         {
             try
             {
@@ -37,9 +37,9 @@ namespace LibraryManagement.DbManager.Controller
             }
         }
 
-        public bool ChangePassword(string id, string newpassword)
+        public bool Edit(string id, string newpassword)
         {
-            DocGia docGia = _libraryDbContext.DocGias.SingleOrDefault(dg => dg.ID.Equals(id));
+            DocGia docGia = GetByID(id);
             if (docGia != null)
             {
                 docGia.MatKhau = Utilities.CalculateHash(newpassword + docGia.ID);
@@ -65,13 +65,47 @@ namespace LibraryManagement.DbManager.Controller
             return _libraryDbContext.DocGias.SingleOrDefault(dg => dg.SinhVien.MaSV.Equals(Msv));
         }
 
-        public List<DocGia> GetByName(string name)
+        public List<DocGia> SearchByName(string name)
         {
             if (!string.IsNullOrEmpty(name))
             {
                 return _libraryDbContext.DocGias.Where(dg => dg.SinhVien.HoTen.Contains(name)).ToList();
             }
             return GetAll();
+        }
+
+        public List<string> SearchByID_string(string searchStr)
+        {
+            return _libraryDbContext.DocGias
+                .Where(dg => dg.ID.Contains(searchStr))
+                .Select(dg => dg.ID)
+                .Take(10)
+                .ToList();
+        }
+
+        public List<DocGia> SearchByID(string searchStr)
+        {
+            return _libraryDbContext.DocGias.Where(dg => dg.ID.Contains(searchStr)).ToList();
+        }
+
+        public List<DocGia> SearchByMSV(string searchStr)
+        {
+            return _libraryDbContext.DocGias.Where(dg => dg.MaSV.Contains(searchStr)).ToList();
+        }
+
+        public bool Remove(string id)
+        {
+            try
+            {
+                DocGia dg = GetByID(id);
+                _libraryDbContext.DocGias.Remove(dg);
+                _libraryDbContext.SaveChanges();
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
         }
     }
 }
