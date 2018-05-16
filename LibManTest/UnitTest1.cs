@@ -63,6 +63,8 @@ namespace LibManTest
             //    dauSach.TrangThai = "OK";
             //    bool result = dauSachController.AddNew(dauSach);
             //}
+
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         }
     }
 }

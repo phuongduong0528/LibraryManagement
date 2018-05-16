@@ -30,13 +30,12 @@ namespace LibraryManagement.DbManager.Controller
             && dpm.ID == iddongphieu);
             if(dongPhieuMuon != null)
             {
-                QuyenSach qs = new QuyenSach();
-                qs = _quyenSachController.GetById(dongPhieuMuon.IDQuyenSach);
                 dongPhieuMuon.NgayTraSach = ngayTra;
                 dongPhieuMuon.TinhTrangSachTra = tinhTrang;
-                qs.TinhTrang = tinhTrang;
                 dongPhieuMuon.NoiDungPhat = NoiDung;
                 dongPhieuMuon.TienPhat = tienPhat;
+
+                _quyenSachController.Edit(dongPhieuMuon.IDQuyenSach, tinhTrang, NoiDung);
                 _libraryDbContext.Entry(dongPhieuMuon).State = System.Data.Entity.EntityState.Modified;
                 _libraryDbContext.SaveChanges();
                 return true;

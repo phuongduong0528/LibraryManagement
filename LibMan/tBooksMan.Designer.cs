@@ -38,6 +38,7 @@
             this.madocgiaLbl = new System.Windows.Forms.Label();
             this.idDocGiaTxb = new System.Windows.Forms.TextBox();
             this.sachmuonDgv = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.choMuonBtn = new System.Windows.Forms.Button();
@@ -82,7 +83,6 @@
             this.tendocgiaLbl2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.idPhieuMuonTxb = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -214,6 +214,21 @@
             this.sachmuonDgv.Name = "sachmuonDgv";
             this.sachmuonDgv.Size = new System.Drawing.Size(517, 208);
             this.sachmuonDgv.TabIndex = 6;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Teal;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(125, 240);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(123, 43);
+            this.button5.TabIndex = 11;
+            this.button5.Text = "In phiếu mượn";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button3
             // 
@@ -768,21 +783,6 @@
             this.idPhieuMuonTxb.Size = new System.Drawing.Size(190, 26);
             this.idPhieuMuonTxb.TabIndex = 6;
             this.idPhieuMuonTxb.TextChanged += new System.EventHandler(this.idPhieuMuonTxb_TextChanged_1);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Teal;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(125, 240);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(123, 43);
-            this.button5.TabIndex = 11;
-            this.button5.Text = "In phiếu mượn";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // tBooksMan
             // 
