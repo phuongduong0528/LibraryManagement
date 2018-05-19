@@ -229,6 +229,7 @@
             this.Name = "tChangePass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Đổi mật khẩu";
+            this.Load += new System.EventHandler(this.tChangePass_Load);
             this.Click += new System.EventHandler(this.tChangePass_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

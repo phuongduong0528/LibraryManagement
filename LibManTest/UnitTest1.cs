@@ -28,7 +28,7 @@ namespace LibManTest
             //dauSach.KeSach = "CNTT-01";
             //dauSach.TrangThai = "OK";
             //bool result = dauSachController.AddNew(dauSach);
-            //var x = DauSachAdaptor.GetListDauSachDto(dauSachController.GetAll());
+            //var x = DauSachAdaptor.GetListDauSachDto(dauSachController.GetAllDauSach());
 
             //DongPhieuMuonController dongPhieuMuonController = new DongPhieuMuonController();
             //PhieuMuonController phieuMuonController = new PhieuMuonController();

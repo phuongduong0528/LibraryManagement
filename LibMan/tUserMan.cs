@@ -173,7 +173,7 @@ namespace LibMan
             ResetTextBox();
         }
 
-        private void ResetTextBox()
+        private void ResetTextBox() 
         {
             diachiTxb.Clear();
             hotenTxb.Clear();
@@ -185,6 +185,13 @@ namespace LibMan
         {
             danhsachDgDgv.DataSource =
                 DocGiaAdaptor.GetListDocGiaDto(_docGiaController.GetAll());
+        }
+
+        private void huyBtn_Click(object sender, EventArgs e)
+        {
+            suaBtn.Enabled = true;
+            xoaBtn.Enabled = true;
+            nhapBtn.Text = "Nhập";
         }
     }
 }

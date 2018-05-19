@@ -158,6 +158,7 @@ namespace LibMan
 
         private void tBooksMan_Load(object sender, EventArgs e)
         {
+            ngayHenTraDtp.Value = DateTime.Now + new TimeSpan(7,0,0,0);
             _dauSachs = DauSachAdaptor.GetListDauSachDto(_dauSachController
                 .SearchByName(timkiemsachTxb.Text));
             ngaymuonLbl.Text = "Ngày mượn: " + DateTime.Now.ToString("dd/MM/yyyy");

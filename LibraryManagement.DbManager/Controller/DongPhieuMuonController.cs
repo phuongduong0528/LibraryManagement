@@ -28,19 +28,16 @@ namespace LibraryManagement.DbManager.Controller
         {
             DongPhieuMuon dongPhieuMuon = _libraryDbContext.DongPhieuMuons.SingleOrDefault(dpm => dpm.IDPhieuMuon == idPhieuMuon
             && dpm.ID == iddongphieu);
-            if(dongPhieuMuon != null)
-            {
-                dongPhieuMuon.NgayTraSach = ngayTra;
-                dongPhieuMuon.TinhTrangSachTra = tinhTrang;
-                dongPhieuMuon.NoiDungPhat = NoiDung;
-                dongPhieuMuon.TienPhat = tienPhat;
+            if (dongPhieuMuon == null) return false;
+            dongPhieuMuon.NgayTraSach = ngayTra;
+            dongPhieuMuon.TinhTrangSachTra = tinhTrang;
+            dongPhieuMuon.NoiDungPhat = NoiDung;
+            dongPhieuMuon.TienPhat = tienPhat;
 
-                _quyenSachController.Edit(dongPhieuMuon.IDQuyenSach, tinhTrang, NoiDung);
-                _libraryDbContext.Entry(dongPhieuMuon).State = System.Data.Entity.EntityState.Modified;
-                _libraryDbContext.SaveChanges();
-                return true;
-            }
-            return false;
+            _quyenSachController.Edit(dongPhieuMuon.IDQuyenSach, tinhTrang, NoiDung);
+            _libraryDbContext.Entry(dongPhieuMuon).State = System.Data.Entity.EntityState.Modified;
+            _libraryDbContext.SaveChanges();
+            return true;
         }
 
         public List<DongPhieuMuon> GetListByDocGia(string idDocGia)
@@ -66,6 +63,14 @@ namespace LibraryManagement.DbManager.Controller
             return _libraryDbContext
                 .DongPhieuMuons
                 .Where(dpm => dpm.PhieuMuon.DocGia.ID.Equals(idDocGia) && dpm.NgayTraSach.Value == null)
+                .ToList();
+        }
+
+        public List<DongPhieuMuon> GetListCurrentlyBooked()
+        {
+            return _libraryDbContext
+                .DongPhieuMuons
+                .Where(dpm => dpm.NgayTraSach.Value == null)
                 .ToList();
         }
 

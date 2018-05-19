@@ -22,6 +22,19 @@ namespace LibMan
             InitializeComponent();
         }
 
+        public tChangePass(bool docGia, string userID)
+        {
+            InitializeComponent();
+
+            if (docGia)
+            {
+                accountIdTxb.Text = userID;
+                accountIdTxb.ReadOnly = true;
+                comboBox1.SelectedIndex = 1;
+                comboBox1.Enabled = false;
+            }
+        }
+
         private void xacnhanBtn_Click(object sender, EventArgs e)
         {
             if (!newPassTxb.Text.Equals(cnewPassTxb.Text))
@@ -85,6 +98,11 @@ namespace LibMan
         private void thoatBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tChangePass_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

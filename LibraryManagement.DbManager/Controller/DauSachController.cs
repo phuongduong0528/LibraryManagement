@@ -57,23 +57,23 @@ namespace LibraryManagement.DbManager.Controller
             }
         }
 
-        public List<DauSach> GetAll()
+        public List<DauSach> GetAllDauSach()
         {
             return _libraryDbContext.DauSaches.ToList();
         }
 
         public List<DauSach> GetByFilter(string ten, string theLoai, string tacGia)
         {
-            List<DauSach> dauSaches = GetAll();
+            List<DauSach> dauSaches = new List<DauSach>();
             if (!string.IsNullOrEmpty(ten))
             {
                 dauSaches = _libraryDbContext.DauSaches.Where(ds => ds.TenSach.Contains(ten)).Take(100).ToList();
             }
-            if (!string.IsNullOrEmpty(ten))
+            if (!string.IsNullOrEmpty(theLoai))
             {
                 dauSaches = _libraryDbContext.DauSaches.Where(ds => ds.TheLoai.TenTheLoai.Contains(theLoai)).Take(100).ToList();
             }
-            if (!string.IsNullOrEmpty(ten))
+            if (!string.IsNullOrEmpty(tacGia))
             {
                 dauSaches = _libraryDbContext.DauSaches.Where(ds => ds.TacGia.TenTacGia.Contains(tacGia)).Take(100).ToList();
             }

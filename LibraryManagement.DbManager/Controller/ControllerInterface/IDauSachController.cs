@@ -13,7 +13,7 @@ namespace LibraryManagement.DbManager.Controller
         bool Edit(DauSach dauSach);
         bool Remove(int id, bool delForeignKey);
         DauSach GetById(int id);
-        List<DauSach> GetAll();
+        List<DauSach> GetAllDauSach();
         List<DauSach> GetByFilter(string ten,string theLoai, string tacGia);
         List<DauSach> SearchByName(string searchStr);
         List<string> GetTheLoai();

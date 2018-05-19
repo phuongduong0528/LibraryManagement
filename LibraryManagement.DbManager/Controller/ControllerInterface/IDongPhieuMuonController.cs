@@ -18,5 +18,6 @@ namespace LibraryManagement.DbManager.Controller.ControllerInterface
         List<DongPhieuMuon> GetListByDocGia(string idDocGia);
         List<DongPhieuMuon> GetListByMaSinhVien(string msv);
         List<DongPhieuMuon> GetListCurrentlyBookedBooks(string idDocGia);
+        List<DongPhieuMuon> GetListCurrentlyBooked();
     }
 }

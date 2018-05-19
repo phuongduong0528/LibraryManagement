@@ -111,7 +111,7 @@ namespace LibMan
 
         private void tBooksMan2_Load(object sender, EventArgs e)
         {
-            dausachDgv.DataSource = DauSachAdaptor.GetListDauSachDto(_dauSachController.GetAll().Take(100).ToList());
+            dausachDgv.DataSource = DauSachAdaptor.GetListDauSachDto(_dauSachController.GetAllDauSach().Take(100).ToList());
             tacgiaDgv.DataSource = _tacGiaController.GetAll();
             nhaxuatbanCbx.DataSource = _nhaXuatBanController.GetAllByName();
             theLoaiCbx.DataSource = _theLoaiController.GetAllByName();
@@ -230,7 +230,7 @@ namespace LibMan
                 suasachBtn.Enabled = true;
                 xoaBtn.Enabled = true;
                 nhapsachBtn.Text = "Nhập";
-                dausachDgv.DataSource = DauSachAdaptor.GetListDauSachDto(_dauSachController.GetAll().Take(100).ToList());
+                dausachDgv.DataSource = DauSachAdaptor.GetListDauSachDto(_dauSachController.GetAllDauSach().Take(100).ToList());
             }
         }
 
@@ -301,7 +301,7 @@ namespace LibMan
                     suasachBtn.Text = "Sửa";
                     return;
                 }
-                dausachDgv.DataSource = DauSachAdaptor.GetListDauSachDto(_dauSachController.GetAll().Take(100).ToList());
+                dausachDgv.DataSource = DauSachAdaptor.GetListDauSachDto(_dauSachController.GetAllDauSach().Take(100).ToList());
             }
             
         }
@@ -360,7 +360,7 @@ namespace LibMan
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dausachDgv.DataSource = DauSachAdaptor.GetListDauSachDto(_dauSachController.GetAll().Take(100).ToList());
+            dausachDgv.DataSource = DauSachAdaptor.GetListDauSachDto(_dauSachController.GetAllDauSach().Take(100).ToList());
         }
 
         private void suatacgiaBtn_Click(object sender, EventArgs e)
@@ -509,7 +509,7 @@ namespace LibMan
                     _dauSachController.Remove(id, false);
                 if(result == DialogResult.Cancel)
                     return;
-                dausachDgv.DataSource = DauSachAdaptor.GetListDauSachDto(_dauSachController.GetAll().Take(100).ToList());
+                dausachDgv.DataSource = DauSachAdaptor.GetListDauSachDto(_dauSachController.GetAllDauSach().Take(100).ToList());
             }
             catch(Exception ex)
             {

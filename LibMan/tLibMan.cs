@@ -12,7 +12,7 @@ namespace LibMan
 {
     public partial class tLibMan : Form
     {
-        private string _uesrRole;
+        private string _userRole;
         private string _userId;
         public tLibMan()
         {
@@ -22,18 +22,25 @@ namespace LibMan
         public tLibMan(string userRole, string userId)
         {
             InitializeComponent();
-            _uesrRole = userRole;
+            _userRole = userRole;
             _userId = userId;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if(_uesrRole == "ThuThu")
+            if (_userRole == "Admin")
+            {
+                tìmKiếmSáchToolStripMenuItem.Visible = false;
+                tìmKiếmBạnĐọcToolStripMenuItem.Visible = false;
+            }
+            if (_userRole == "ThuThu")
             {
                 đổiMậtKhẩuToolStripMenuItem.Visible = false;
                 phânQuyềnToolStripMenuItem.Visible = false;
+                tìmKiếmSáchToolStripMenuItem.Visible = false;
+                tìmKiếmBạnĐọcToolStripMenuItem.Visible = false;
             }
-            if(_uesrRole == "BanDoc")
+            if(_userRole == "BanDoc")
             {
                 phânQuyềnToolStripMenuItem.Visible = false;
                 thôngSốHệThốngToolStripMenuItem.Visible = false;
@@ -43,6 +50,7 @@ namespace LibMan
                 bổSungSáchToolStripMenuItem.Visible = false;
                 quảnLýSáchMượnToolStripMenuItem.Visible = false;
                 thôngTinCáNhânToolStripMenuItem.Visible = false;
+                danhSáchNhữngSáchĐangMượnToolStripMenuItem.Visible = false;
             }
         }
 
@@ -104,8 +112,16 @@ namespace LibMan
         // Đổi mật khẩu
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tChangePass cp = new tChangePass();
-            cp.ShowDialog();
+            if (_userRole.Equals("BanDoc"))
+            {
+                tChangePass tChangePass = new tChangePass(true,_userId);
+                tChangePass.ShowDialog();
+            }
+            else
+            {
+                tChangePass tChangePass = new tChangePass(false, _userId);
+                tChangePass.ShowDialog();
+            }
         }
 
         // Form thông tin cá nhân bạn đọc
