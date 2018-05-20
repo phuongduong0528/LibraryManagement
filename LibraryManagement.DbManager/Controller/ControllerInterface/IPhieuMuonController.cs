@@ -10,6 +10,7 @@ namespace LibraryManagement.DbManager.Controller.ControllerInterface
     interface IPhieuMuonController
     {
         int Add(string IdNql, string IdDocGia,DateTime HanTra);
+        bool Edit(int idPhieuMuon, DateTime ngayTra);
         PhieuMuon GetById(int id);
         List<int> GetId(string searchStr);
     }

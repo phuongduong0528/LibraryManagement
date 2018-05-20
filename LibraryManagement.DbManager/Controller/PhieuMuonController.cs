@@ -2,6 +2,7 @@
 using LibraryManagement.DbManager.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,22 @@ namespace LibraryManagement.DbManager.Controller
             catch(Exception ex)
             {
                 return -1;
+            }
+        }
+
+        public bool Edit(int idPhieuMuon, DateTime ngayTra)
+        {
+            try
+            {
+                PhieuMuon phieuMuon = GetById(idPhieuMuon);
+                phieuMuon.HanTraSach = ngayTra;
+                _libraryDbContext.Entry(phieuMuon).State = EntityState.Modified;
+                _libraryDbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 

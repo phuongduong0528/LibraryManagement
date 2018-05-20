@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -275,12 +276,14 @@ namespace LibMan
             tendocgiaLbl2.Text = "Tên độc giả: " + phieuMuonDto.DocGia;
             iddocgiaLbl.Text = "ID Độc giả: " + phieuMuonDto.IdDocGia;
             nguoichomuonLbl.Text = "Người cho mượn: " + phieuMuonDto.NguoiQl;
+            hantraDtp2.Value = DateTime.ParseExact(phieuMuonDto.HanTraSach, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             //ngayHenTraDtp.Text = "Ngày hẹn trả: " + phieuMuonDto.HanTraSach;
             listIdPhieuMuon.Visible = false;
         }
 
         private void LoadGridView()
         {
+            dataGridView2.DataSource = null;
             dataGridView2.DataSource =
                             DongPhieuMuonAdaptor.GetListDongPhieuMuonDto(
                                 _dongphieuMuonController.GetListByPhieuMuon(_idphieumuon)
@@ -396,6 +399,39 @@ namespace LibMan
                 excelPackage.SaveAs(new System.IO.FileInfo(path + @"\phieumuon.xlsx"));
             }
            
+        }
+
+        private void giahantraBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = dataGridView2.CurrentCell.RowIndex;
+                int iddongphieu = Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value);
+                if (dataGridView2.Rows[i].Cells[6].Value.ToString() != "")
+                {
+                    MessageBox.Show("Sách đã trả");
+                    return;
+                }
+                if (hantraDtp2.Value < DateTime.Now)
+                {
+                    MessageBox.Show("Ngày trả sách không hợp lệ");
+                }
+                else
+                {
+                    _phieuMuonController.Edit(_idphieumuon, hantraDtp2.Value);
+                    MessageBox.Show("Gia hạn trả thành công");
+                    LoadGridView();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Chưa chọn dữ liệu");
+            }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

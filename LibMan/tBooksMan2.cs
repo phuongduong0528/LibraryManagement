@@ -557,5 +557,20 @@ namespace LibMan
 
             }
         }
+
+        private void xemcutheBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = dausachDgv.CurrentCell.RowIndex;
+                int id = Convert.ToInt32(dausachDgv.Rows[i].Cells[0].Value);
+                tQuyenSach tQuyenSach = new tQuyenSach(id);
+                tQuyenSach.ShowDialog();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }

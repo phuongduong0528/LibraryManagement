@@ -15,12 +15,32 @@ namespace LibraryManagement.DbManager.Controller
             _libraryDbContext = new LibraryDbContext();
         }
 
-        public void Add(int numberOfBooks, int idDauSach)
+        public void AddNew(int numberOfBooks, int idDauSach)
         {
             QuyenSach quyenSach;
             int count = 0;
             string id = $"{idDauSach}-";
             for(int i = 0; i < numberOfBooks; i++)
+            {
+                count++;
+                quyenSach = new QuyenSach
+                {
+                    ID = id + count.ToString("D4"),
+                    IDDauSach = idDauSach,
+                    TinhTrang = "OK",
+                    MoTa = "none"
+                };
+                _libraryDbContext.QuyenSaches.Add(quyenSach);
+                _libraryDbContext.SaveChanges();
+            }
+        }
+
+        public void AddMore(int numberofbooks, int idDauSach)
+        {
+            QuyenSach quyenSach;
+            int count = _libraryDbContext.QuyenSaches.Where(ds=>ds.IDDauSach == idDauSach).Count();
+            string id = $"{idDauSach}-";
+            for (int i = 0; i < numberofbooks; i++)
             {
                 count++;
                 quyenSach = new QuyenSach
@@ -83,6 +103,11 @@ namespace LibraryManagement.DbManager.Controller
         public int GetAvailableBooksCount(int idDauSach)
         {
             return GetAvailable(idDauSach).Count;
+        }
+
+        public List<QuyenSach> GetAllByDauSach(int idDauSach)
+        {
+            return _libraryDbContext.QuyenSaches.Where(qs => qs.IDDauSach == idDauSach).ToList();
         }
 
         public List<QuyenSach> GetBorrowedBooks()

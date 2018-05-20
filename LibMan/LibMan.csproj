@@ -126,6 +126,12 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="tQuyenSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tQuyenSach.Designer.cs">
+      <DependentUpon>tQuyenSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="tSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tQuyenSach.resx">
+      <DependentUpon>tQuyenSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tSearch.resx">
       <DependentUpon>tSearch.cs</DependentUpon>

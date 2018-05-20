@@ -24,7 +24,7 @@ namespace LibraryManagement.DbManager.Controller
                 _libraryDbContext.DauSaches.Add(dauSach);
                 _libraryDbContext.SaveChanges();
                 QuyenSachController quyenSachController = new QuyenSachController();
-                quyenSachController.Add(dauSach.SoLuong, dauSach.ID);
+                quyenSachController.AddNew(dauSach.SoLuong, dauSach.ID);
                 return true;
             }
             catch(Exception ex)

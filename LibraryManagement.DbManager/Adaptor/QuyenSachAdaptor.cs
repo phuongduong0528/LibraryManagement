@@ -22,7 +22,7 @@ namespace LibraryManagement.DbManager.Adaptor
 
             quyenSachDto.Id = quyenSach.ID;
             quyenSachDto.TenSach = quyenSach.DauSach.TenSach;
-            quyenSachDto.NgayMuon = dongPhieuMuon.PhieuMuon.NgayMuonSach.ToString("dd/MM/yyyy",CultureInfo.InvariantCulture);
+            quyenSachDto.NgayMuon = dongPhieuMuon.PhieuMuon.NgayMuonSach.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
             quyenSachDto.DocGiaMuon = dongPhieuMuon.PhieuMuon.DocGia.SinhVien.HoTen;
             quyenSachDto.IdDocGiaMuon = dongPhieuMuon.PhieuMuon.IDDocGia;
 
