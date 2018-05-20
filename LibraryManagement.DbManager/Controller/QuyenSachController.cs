@@ -92,7 +92,7 @@ namespace LibraryManagement.DbManager.Controller
             List<QuyenSach> availablebooks = new List<QuyenSach>();
             foreach (QuyenSach quyensach in _libraryDbContext.QuyenSaches.Where(qs => qs.IDDauSach == idDauSach))
             {
-                if (!IsBorrowed(quyensach.ID) && !quyensach.TinhTrang.Equals("Mất"))
+                if (!IsBorrowed(quyensach.ID) && !quyensach.TinhTrang.Equals("Mất") && !quyensach.TinhTrang.Equals("Rách"))
                 {
                     availablebooks.Add(quyensach);
                 }

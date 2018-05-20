@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.danhsachDgDgv = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.huyBtn = new System.Windows.Forms.Button();
             this.nuRbt = new System.Windows.Forms.RadioButton();
             this.namRbt = new System.Windows.Forms.RadioButton();
             this.msvTxb = new System.Windows.Forms.TextBox();
@@ -57,7 +59,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.hotenTxb = new System.Windows.Forms.TextBox();
-            this.huyBtn = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhsachDgDgv)).BeginInit();
@@ -118,7 +119,7 @@
             this.txtbTK1.Enter += new System.EventHandler(this.txtbTK1_Enter);
             this.txtbTK1.Leave += new System.EventHandler(this.txtbTK1_Leave);
             // 
-            // button1
+            // lammoiBtn
             // 
             this.lammoiBtn.BackColor = System.Drawing.Color.Teal;
             this.lammoiBtn.FlatAppearance.BorderSize = 0;
@@ -129,7 +130,7 @@
             this.lammoiBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lammoiBtn.Location = new System.Drawing.Point(829, 26);
             this.lammoiBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.lammoiBtn.Name = "button1";
+            this.lammoiBtn.Name = "lammoiBtn";
             this.lammoiBtn.Size = new System.Drawing.Size(85, 38);
             this.lammoiBtn.TabIndex = 13;
             this.lammoiBtn.Text = "Làm mới";
@@ -227,26 +228,34 @@
             // danhsachDgDgv
             // 
             this.danhsachDgDgv.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.danhsachDgDgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.danhsachDgDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.danhsachDgDgv.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.danhsachDgDgv.DefaultCellStyle = dataGridViewCellStyle2;
             this.danhsachDgDgv.Location = new System.Drawing.Point(6, 17);
             this.danhsachDgDgv.Margin = new System.Windows.Forms.Padding(2);
             this.danhsachDgDgv.Name = "danhsachDgDgv";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.danhsachDgDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.danhsachDgDgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.danhsachDgDgv.RowTemplate.Height = 24;
             this.danhsachDgDgv.Size = new System.Drawing.Size(922, 229);
             this.danhsachDgDgv.TabIndex = 0;
@@ -280,6 +289,27 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin độc giả";
+            // 
+            // huyBtn
+            // 
+            this.huyBtn.BackColor = System.Drawing.Color.Teal;
+            this.huyBtn.FlatAppearance.BorderSize = 0;
+            this.huyBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.huyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.huyBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.huyBtn.ForeColor = System.Drawing.Color.White;
+            this.huyBtn.Image = global::LibMan.Properties.Resources.if_Cancel_14932821;
+            this.huyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.huyBtn.Location = new System.Drawing.Point(811, 26);
+            this.huyBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.huyBtn.Name = "huyBtn";
+            this.huyBtn.Size = new System.Drawing.Size(93, 31);
+            this.huyBtn.TabIndex = 26;
+            this.huyBtn.Text = "Hủy";
+            this.huyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.huyBtn.UseVisualStyleBackColor = false;
+            this.huyBtn.Visible = false;
+            this.huyBtn.Click += new System.EventHandler(this.huyBtn_Click);
             // 
             // nuRbt
             // 
@@ -432,27 +462,6 @@
             this.hotenTxb.Name = "hotenTxb";
             this.hotenTxb.Size = new System.Drawing.Size(285, 29);
             this.hotenTxb.TabIndex = 0;
-            // 
-            // huyBtn
-            // 
-            this.huyBtn.BackColor = System.Drawing.Color.Teal;
-            this.huyBtn.FlatAppearance.BorderSize = 0;
-            this.huyBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.huyBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.huyBtn.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.huyBtn.ForeColor = System.Drawing.Color.White;
-            this.huyBtn.Image = global::LibMan.Properties.Resources.if_Cancel_14932821;
-            this.huyBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.huyBtn.Location = new System.Drawing.Point(811, 26);
-            this.huyBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.huyBtn.Name = "huyBtn";
-            this.huyBtn.Size = new System.Drawing.Size(93, 31);
-            this.huyBtn.TabIndex = 26;
-            this.huyBtn.Text = "Hủy";
-            this.huyBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.huyBtn.UseVisualStyleBackColor = false;
-            this.huyBtn.Visible = false;
-            this.huyBtn.Click += new System.EventHandler(this.huyBtn_Click);
             // 
             // tUserMan
             // 

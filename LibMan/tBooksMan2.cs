@@ -112,7 +112,7 @@ namespace LibMan
         private void tBooksMan2_Load(object sender, EventArgs e)
         {
             dausachDgv.DataSource = DauSachAdaptor.GetListDauSachDto(_dauSachController.GetAllDauSach().Take(100).ToList());
-            tacgiaDgv.DataSource = _tacGiaController.GetAll();
+            tacgiaDgv.DataSource = _tacGiaController.GetAll().Select(tg => new { tg.ID, tg.TenTacGia, tg.ThongTin }).ToList();
             nhaxuatbanCbx.DataSource = _nhaXuatBanController.GetAllByName();
             theLoaiCbx.DataSource = _theLoaiController.GetAllByName();
         }
@@ -377,7 +377,7 @@ namespace LibMan
                 {
                     MessageBox.Show("Không thể sửa dữ liệu");
                 }
-                tacgiaDgv.DataSource = _tacGiaController.GetAll();
+                tacgiaDgv.DataSource = _tacGiaController.GetAll().Select(tg => new { tg.ID, tg.TenTacGia, tg.ThongTin }).ToList();
             }
             catch(Exception ex)
             {
@@ -388,7 +388,7 @@ namespace LibMan
 
         private void lammoiDgvtacgiaBtn_Click(object sender, EventArgs e)
         {
-            tacgiaDgv.DataSource = _tacGiaController.GetAll();
+            tacgiaDgv.DataSource = _tacGiaController.GetAll().Select(tg=> new{tg.ID,tg.TenTacGia,tg.ThongTin}).ToList();
         }
 
         private void nhaplaitgBtn_Click(object sender, EventArgs e)
@@ -446,7 +446,7 @@ namespace LibMan
 
         private void lammoiDgvTheloaiBtn_Click(object sender, EventArgs e)
         {
-            theloaiDgv.DataSource = _theLoaiController.GetAll();
+            theloaiDgv.DataSource = _theLoaiController.GetAll().Select(tl=>new {tl.ID,tl.TenTheLoai}).ToList();
         }
 
         private void nhaptheloaiBtn_Click(object sender, EventArgs e)

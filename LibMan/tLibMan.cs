@@ -30,14 +30,12 @@ namespace LibMan
         {
             if (_userRole == "Admin")
             {
-                tìmKiếmSáchToolStripMenuItem.Visible = false;
                 tìmKiếmBạnĐọcToolStripMenuItem.Visible = false;
             }
             if (_userRole == "ThuThu")
             {
                 đổiMậtKhẩuToolStripMenuItem.Visible = false;
                 phânQuyềnToolStripMenuItem.Visible = false;
-                tìmKiếmSáchToolStripMenuItem.Visible = false;
                 tìmKiếmBạnĐọcToolStripMenuItem.Visible = false;
             }
             if(_userRole == "BanDoc")

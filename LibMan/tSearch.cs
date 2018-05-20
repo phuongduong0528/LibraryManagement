@@ -44,5 +44,10 @@ namespace LibMan
                     break;
             }
         }
+
+        private void searchResulrDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
