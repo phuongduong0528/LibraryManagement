@@ -100,7 +100,7 @@ namespace LibraryManagement.DbManager.Controller
         public List<object> GetListNumberOfBooks()
         {
             List<object> result = new List<object>();
-            foreach (TacGia tg in _libraryDbContext.TacGias)
+            foreach (TacGia tg in _libraryDbContext.TacGias.OrderByDescending(tg=>tg.DauSaches.Count))
             {
                 result.Add(new{tg.ID,tg.TenTacGia,tg.DauSaches.Count});
             }

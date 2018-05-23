@@ -218,6 +218,7 @@
             this.thốngKêBạnĐọcToolStripMenuItem.Name = "thốngKêBạnĐọcToolStripMenuItem";
             this.thốngKêBạnĐọcToolStripMenuItem.Size = new System.Drawing.Size(188, 24);
             this.thốngKêBạnĐọcToolStripMenuItem.Text = "Thống kê bạn đọc";
+            this.thốngKêBạnĐọcToolStripMenuItem.Click += new System.EventHandler(this.thốngKêBạnĐọcToolStripMenuItem_Click);
             // 
             // tLibMan
             // 
@@ -229,7 +230,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "tLibMan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý thư viện ";

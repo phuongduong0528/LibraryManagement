@@ -46,8 +46,9 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(123, 37);
             this.button5.TabIndex = 16;
-            this.button5.Text = "In kết quả";
+            this.button5.Text = "Xuất kết quả";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label1
             // 
@@ -62,14 +63,14 @@
             // 
             this.loaiThongKeCbx.FormattingEnabled = true;
             this.loaiThongKeCbx.Items.AddRange(new object[] {
-            "Sách mượn nhiều",
-            "Số lượng sách theo thể loại",
-            "Số lượng sách theo tác giả"});
+            "Độc giả mượn nhiều",
+            "Độc giả mới"});
             this.loaiThongKeCbx.Location = new System.Drawing.Point(136, 9);
             this.loaiThongKeCbx.Margin = new System.Windows.Forms.Padding(0);
             this.loaiThongKeCbx.Name = "loaiThongKeCbx";
             this.loaiThongKeCbx.Size = new System.Drawing.Size(182, 29);
             this.loaiThongKeCbx.TabIndex = 14;
+            this.loaiThongKeCbx.SelectedIndexChanged += new System.EventHandler(this.loaiThongKeCbx_SelectedIndexChanged);
             // 
             // ketquaTkDgv
             // 

@@ -40,6 +40,8 @@
             this.sachmuonDgv = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.choMuonBtn = new System.Windows.Forms.Button();
             this.ngayHenTraDtp = new System.Windows.Forms.DateTimePicker();
             this.dtpNgaytra = new System.Windows.Forms.Label();
             this.cbbMadocgia = new System.Windows.Forms.Label();
@@ -49,6 +51,7 @@
             this.dausachDgv = new System.Windows.Forms.DataGridView();
             this.lbshowTen = new System.Windows.Forms.Label();
             this.lbshowNam = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.lbshowNXB = new System.Windows.Forms.Label();
             this.lbshowTL = new System.Windows.Forms.Label();
             this.lbshowTG = new System.Windows.Forms.Label();
@@ -71,7 +74,9 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tinhtrangsachCbx = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button8 = new System.Windows.Forms.Button();
             this.giahantraBtn = new System.Windows.Forms.Button();
+            this.trasachBtn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -81,11 +86,6 @@
             this.tendocgiaLbl2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.idPhieuMuonTxb = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.choMuonBtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.trasachBtn = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -126,6 +126,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.choMuonBtn);
             this.groupBox2.Controls.Add(this.listIdDocGia);
             this.groupBox2.Controls.Add(this.ngaymuonLbl);
             this.groupBox2.Controls.Add(this.soluongmuonLbl);
@@ -133,10 +137,6 @@
             this.groupBox2.Controls.Add(this.madocgiaLbl);
             this.groupBox2.Controls.Add(this.idDocGiaTxb);
             this.groupBox2.Controls.Add(this.sachmuonDgv);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.choMuonBtn);
             this.groupBox2.Controls.Add(this.ngayHenTraDtp);
             this.groupBox2.Controls.Add(this.dtpNgaytra);
             this.groupBox2.Controls.Add(this.cbbMadocgia);
@@ -226,12 +226,12 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(125, 240);
+            this.button5.Location = new System.Drawing.Point(139, 238);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(123, 43);
+            this.button5.Size = new System.Drawing.Size(125, 43);
             this.button5.TabIndex = 11;
-            this.button5.Text = "In phiếu mượn";
+            this.button5.Text = "Xuất phiếu";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -241,14 +241,49 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(386, 193);
+            this.button3.Location = new System.Drawing.Point(268, 238);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(136, 43);
+            this.button3.Size = new System.Drawing.Size(125, 43);
             this.button3.TabIndex = 11;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.xoaBtn_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Teal;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = global::LibMan.Properties.Resources.if_Cancel_14932821;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(397, 238);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(125, 43);
+            this.button4.TabIndex = 10;
+            this.button4.Text = "Thoát";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // choMuonBtn
+            // 
+            this.choMuonBtn.BackColor = System.Drawing.Color.Teal;
+            this.choMuonBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.choMuonBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.choMuonBtn.ForeColor = System.Drawing.Color.White;
+            this.choMuonBtn.Image = global::LibMan.Properties.Resources.if_Artboard_1_1790657;
+            this.choMuonBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.choMuonBtn.Location = new System.Drawing.Point(10, 238);
+            this.choMuonBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.choMuonBtn.Name = "choMuonBtn";
+            this.choMuonBtn.Size = new System.Drawing.Size(125, 43);
+            this.choMuonBtn.TabIndex = 9;
+            this.choMuonBtn.Text = "Cho mượn";
+            this.choMuonBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.choMuonBtn.UseVisualStyleBackColor = false;
+            this.choMuonBtn.Click += new System.EventHandler(this.choMuonBtn_Click);
             // 
             // ngayHenTraDtp
             // 
@@ -366,6 +401,24 @@
             this.lbshowNam.Size = new System.Drawing.Size(15, 19);
             this.lbshowNam.TabIndex = 15;
             this.lbshowNam.Text = "-";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Teal;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = global::LibMan.Properties.Resources.if_sign_add_2990682;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(270, 247);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(116, 43);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Mượn mới";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.muonMoiBtn_Click);
             // 
             // lbshowNXB
             // 
@@ -631,6 +684,22 @@
             this.dataGridView2.TabIndex = 17;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Teal;
+            this.button8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Image = global::LibMan.Properties.Resources.if_Cancel_14932821;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(809, 14);
+            this.button8.Margin = new System.Windows.Forms.Padding(2);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(116, 44);
+            this.button8.TabIndex = 16;
+            this.button8.Text = "Thoát";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
             // giahantraBtn
             // 
             this.giahantraBtn.BackColor = System.Drawing.Color.Teal;
@@ -645,6 +714,23 @@
             this.giahantraBtn.Text = "Gia hạn";
             this.giahantraBtn.UseVisualStyleBackColor = false;
             this.giahantraBtn.Click += new System.EventHandler(this.giahantraBtn_Click);
+            // 
+            // trasachBtn
+            // 
+            this.trasachBtn.BackColor = System.Drawing.Color.Teal;
+            this.trasachBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trasachBtn.ForeColor = System.Drawing.Color.White;
+            this.trasachBtn.Image = global::LibMan.Properties.Resources.if_07_Note_Book_2064482;
+            this.trasachBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.trasachBtn.Location = new System.Drawing.Point(809, 215);
+            this.trasachBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.trasachBtn.Name = "trasachBtn";
+            this.trasachBtn.Size = new System.Drawing.Size(116, 44);
+            this.trasachBtn.TabIndex = 14;
+            this.trasachBtn.Text = "Trả sách";
+            this.trasachBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.trasachBtn.UseVisualStyleBackColor = false;
+            this.trasachBtn.Click += new System.EventHandler(this.trasachBtn_Click);
             // 
             // label11
             // 
@@ -740,92 +826,6 @@
             this.idPhieuMuonTxb.Size = new System.Drawing.Size(190, 26);
             this.idPhieuMuonTxb.TabIndex = 6;
             this.idPhieuMuonTxb.TextChanged += new System.EventHandler(this.idPhieuMuonTxb_TextChanged_1);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Teal;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::LibMan.Properties.Resources.if_Cancel_14932821;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(386, 240);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 43);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Thoát";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // choMuonBtn
-            // 
-            this.choMuonBtn.BackColor = System.Drawing.Color.Teal;
-            this.choMuonBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.choMuonBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.choMuonBtn.ForeColor = System.Drawing.Color.White;
-            this.choMuonBtn.Image = global::LibMan.Properties.Resources.if_Artboard_1_1790657;
-            this.choMuonBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.choMuonBtn.Location = new System.Drawing.Point(5, 240);
-            this.choMuonBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.choMuonBtn.Name = "choMuonBtn";
-            this.choMuonBtn.Size = new System.Drawing.Size(116, 43);
-            this.choMuonBtn.TabIndex = 9;
-            this.choMuonBtn.Text = "Cho mượn";
-            this.choMuonBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.choMuonBtn.UseVisualStyleBackColor = false;
-            this.choMuonBtn.Click += new System.EventHandler(this.choMuonBtn_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Teal;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::LibMan.Properties.Resources.if_sign_add_2990682;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(270, 247);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 43);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Mượn mới";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.muonMoiBtn_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Teal;
-            this.button8.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Image = global::LibMan.Properties.Resources.if_Cancel_14932821;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(809, 14);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(116, 44);
-            this.button8.TabIndex = 16;
-            this.button8.Text = "Thoát";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // trasachBtn
-            // 
-            this.trasachBtn.BackColor = System.Drawing.Color.Teal;
-            this.trasachBtn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trasachBtn.ForeColor = System.Drawing.Color.White;
-            this.trasachBtn.Image = global::LibMan.Properties.Resources.if_07_Note_Book_2064482;
-            this.trasachBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.trasachBtn.Location = new System.Drawing.Point(809, 215);
-            this.trasachBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.trasachBtn.Name = "trasachBtn";
-            this.trasachBtn.Size = new System.Drawing.Size(116, 44);
-            this.trasachBtn.TabIndex = 14;
-            this.trasachBtn.Text = "Trả sách";
-            this.trasachBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.trasachBtn.UseVisualStyleBackColor = false;
-            this.trasachBtn.Click += new System.EventHandler(this.trasachBtn_Click);
             // 
             // tBooksMan
             // 

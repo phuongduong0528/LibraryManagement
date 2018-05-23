@@ -117,6 +117,7 @@ namespace LibMan
 
             string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             excelPackage.SaveAs(new FileInfo(path + @"\thongkesach.xlsx"));
+            MessageBox.Show("Đã xuất thành công thống kê");
         }
     }
 }

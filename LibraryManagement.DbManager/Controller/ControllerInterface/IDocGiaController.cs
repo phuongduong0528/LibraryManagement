@@ -15,10 +15,12 @@ namespace LibraryManagement.DbManager.Controller
         DocGia GetByID(string id);
         DocGia GetByMsv(string Msv);
         List<DocGia> GetAll();
+        List<DocGia> GetByRegisterDate(DateTime date1, DateTime date2);
         List<DocGia> SearchByID(string searchStr);
         List<DocGia> SearchByMSV(string searchStr);
         List<DocGia> SearchByName(string name);
         List<string> SearchByID_string(string searchStr);
         int SoLuotMuon(string id);
+        List<object> BookedTimesPerReader();
     }
 }

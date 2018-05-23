@@ -132,6 +132,11 @@ namespace LibMan
 
         private void choMuonBtn_Click(object sender, EventArgs e)
         {
+            if (sachmuonDgv.RowCount == 0)
+            {
+                MessageBox.Show("Chưa có quyển sách nào");
+                return;
+            }
             PhieuMuonController phieuMuonController = new PhieuMuonController();
             DongPhieuMuonController dongPhieuMuonController = new DongPhieuMuonController();
             if(_docGiaController.GetByID(idDocGiaTxb.Text) == null)
@@ -397,6 +402,7 @@ namespace LibMan
                 //Tự động phát hiện desktop folder
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 excelPackage.SaveAs(new System.IO.FileInfo(path + @"\phieumuon.xlsx"));
+                MessageBox.Show("Đã xuất thành công phiếu mượn");
             }
            
         }

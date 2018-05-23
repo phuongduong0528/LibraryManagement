@@ -71,7 +71,7 @@ namespace LibraryManagement.DbManager.Controller
         public List<object> GetListNumberOfBooks()
         {
             List<object> result = new List<object>();
-            foreach (TheLoai tl in _libraryDbContext.TheLoais)
+            foreach (TheLoai tl in _libraryDbContext.TheLoais.OrderByDescending(tl=>tl.DauSaches.Count))
             {
                 result.Add(new {tl.ID,tl.TenTheLoai,tl.DauSaches.Count});
             }

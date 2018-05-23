@@ -140,5 +140,11 @@ namespace LibMan
             tThongKeSach tThongKeSach = new tThongKeSach();
             tThongKeSach.ShowDialog();
         }
+
+        private void thốngKêBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tThongKeDocGia tThongKeDG = new tThongKeDocGia();
+            tThongKeDG.ShowDialog();
+        }
     }
 }
