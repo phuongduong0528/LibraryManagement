@@ -433,5 +433,10 @@ namespace LibMan
         {
 
         }
+
+        private void sachmuonDgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

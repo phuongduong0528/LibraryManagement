@@ -103,6 +103,11 @@ namespace LibraryManagement.DbManager.Controller
             return theLoais;
         }
 
+        public int GetTotalBorrowed(int idDauSach)
+        {
+            return _libraryDbContext.DongPhieuMuons.Where(dpm => dpm.QuyenSach.DauSach.ID == idDauSach).Count();
+        }
+
         public bool Remove(int id, bool delForeignKey)
         {
             try

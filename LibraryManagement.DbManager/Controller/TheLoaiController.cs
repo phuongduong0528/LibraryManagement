@@ -68,6 +68,17 @@ namespace LibraryManagement.DbManager.Controller
             return _libraryDbContext.TheLoais.Select(tl=>tl.TenTheLoai).ToList();
         }
 
+        public List<object> GetListNumberOfBooks()
+        {
+            List<object> result = new List<object>();
+            foreach (TheLoai tl in _libraryDbContext.TheLoais)
+            {
+                result.Add(new {tl.ID,tl.TenTheLoai,tl.DauSaches.Count});
+            }
+
+            return result;
+        }
+
         public TheLoai GetById(int id)
         {
             return _libraryDbContext.TheLoais.SingleOrDefault(tl => tl.ID == id);

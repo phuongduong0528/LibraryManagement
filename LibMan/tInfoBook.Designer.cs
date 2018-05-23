@@ -145,6 +145,7 @@
             this.Name = "tInfoBook";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thống kê sách đang mượn";
+            this.Load += new System.EventHandler(this.tInfoBook_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quyensachDgv)).EndInit();

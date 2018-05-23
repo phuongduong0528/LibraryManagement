@@ -19,5 +19,6 @@ namespace LibraryManagement.DbManager.Controller
         TacGia GetById(int id);
         List<TacGia> GetAll();
         List<string> SearchByName(string name);
+        List<object> GetListNumberOfBooks();
     }
 }

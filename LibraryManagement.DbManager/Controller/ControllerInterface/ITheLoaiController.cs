@@ -17,5 +17,6 @@ namespace LibraryManagement.DbManager.Controller.ControllerInterface
         TheLoai GetById(int id);
         List<TheLoai> GetAll();
         List<string> GetAllByName();
+        List<object> GetListNumberOfBooks();
     }
 }

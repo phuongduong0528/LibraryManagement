@@ -54,6 +54,7 @@
     <Compile Include="Adaptor\DongPhieuMuonAdaptor.cs" />
     <Compile Include="Adaptor\PhieuMuonAdaptor.cs" />
     <Compile Include="Adaptor\QuyenSachAdaptor.cs" />
+    <Compile Include="Adaptor\ThongKeAdaptor.cs" />
     <Compile Include="Controller\ControllerInterface\IDongPhieuMuonController.cs" />
     <Compile Include="Controller\ControllerInterface\INhaXuatBanController.cs" />
     <Compile Include="Controller\ControllerInterface\IPhieuMuonController.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Dto\DongPhieuMuonDto.cs" />
     <Compile Include="Dto\PhieuMuonDto.cs" />
     <Compile Include="Dto\QuyenSachDto.cs" />
+    <Compile Include="Dto\ThongKeDtos.cs" />
     <Compile Include="Migrations\201805010752417_Init.cs" />
     <Compile Include="Migrations\201805010752417_Init.Designer.cs">
       <DependentUpon>201805010752417_Init.cs</DependentUpon>

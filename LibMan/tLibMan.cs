@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibraryManagement.DbManager.Models;
 
 namespace LibMan
 {
@@ -47,8 +48,8 @@ namespace LibMan
                 quảnLýBạnĐọcToolStripMenuItem.Visible = false;
                 bổSungSáchToolStripMenuItem.Visible = false;
                 quảnLýSáchMượnToolStripMenuItem.Visible = false;
-                thôngTinCáNhânToolStripMenuItem.Visible = false;
-                danhSáchNhữngSáchĐangMượnToolStripMenuItem.Visible = false;
+                //thôngTinCáNhânToolStripMenuItem.Visible = false;
+                //danhSáchNhữngSáchĐangMượnToolStripMenuItem.Visible = false;
             }
         }
 
@@ -68,9 +69,7 @@ namespace LibMan
         // Code cho sự kiện Đăng xuất
         private void raKhỏiHệThốngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tLogin login = new tLogin();
             this.Close();
-            login.Show();
         }
 
         // Code cho sự kiện tìm kiếm sách
@@ -125,15 +124,21 @@ namespace LibMan
         // Form thông tin cá nhân bạn đọc
         private void tìmKiếmBạnĐọcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tInfoUser iu = new tInfoUser();
+            tInfoUser iu = new tInfoUser(_userId);
             iu.ShowDialog();
         }
 
         // form danh sách những quyển sách đang mượn của thư viện
         private void danhSáchNhữngSáchĐangMượnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tInfoBook ib = new tInfoBook();
+            tInfoBook ib = new tInfoBook(_userRole,_userId);
             ib.ShowDialog();
+        }
+
+        private void thốngKêSáchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tThongKeSach tThongKeSach = new tThongKeSach();
+            tThongKeSach.ShowDialog();
         }
     }
 }

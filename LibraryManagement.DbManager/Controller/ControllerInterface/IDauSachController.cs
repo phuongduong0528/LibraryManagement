@@ -17,5 +17,6 @@ namespace LibraryManagement.DbManager.Controller
         List<DauSach> GetByFilter(string ten,string theLoai, string tacGia);
         List<DauSach> SearchByName(string searchStr);
         List<string> GetTheLoai();
+        int GetTotalBorrowed(int idDauSach);
     }
 }

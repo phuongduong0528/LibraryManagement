@@ -83,6 +83,11 @@ namespace LibraryManagement.DbManager.Controller
                 .ToList();
         }
 
+        public int SoLuotMuon(string id)
+        {
+            return _libraryDbContext.DongPhieuMuons.Where(dpm => dpm.PhieuMuon.IDDocGia.Equals(id)).Count();
+        }
+
         public List<DocGia> SearchByID(string searchStr)
         {
             return _libraryDbContext.DocGias.Where(dg => dg.ID.Contains(searchStr)).ToList();

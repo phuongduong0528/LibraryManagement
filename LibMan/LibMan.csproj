@@ -144,6 +144,18 @@
     <Compile Include="tBooksMan.Designer.cs">
       <DependentUpon>tBooksMan.cs</DependentUpon>
     </Compile>
+    <Compile Include="tThongKeDocGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tThongKeDocGia.Designer.cs">
+      <DependentUpon>tThongKeDocGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tThongKeSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tThongKeSach.Designer.cs">
+      <DependentUpon>tThongKeSach.cs</DependentUpon>
+    </Compile>
     <Compile Include="tUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +217,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="tBooksMan.resx">
       <DependentUpon>tBooksMan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tThongKeDocGia.resx">
+      <DependentUpon>tThongKeDocGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tThongKeSach.resx">
+      <DependentUpon>tThongKeSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tUser.resx">
       <DependentUpon>tUser.cs</DependentUpon>

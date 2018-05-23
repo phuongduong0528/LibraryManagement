@@ -19,5 +19,6 @@ namespace LibraryManagement.DbManager.Controller
         List<DocGia> SearchByMSV(string searchStr);
         List<DocGia> SearchByName(string name);
         List<string> SearchByID_string(string searchStr);
+        int SoLuotMuon(string id);
     }
 }

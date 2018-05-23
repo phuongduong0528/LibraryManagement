@@ -74,6 +74,14 @@ namespace LibraryManagement.DbManager.Controller
             return _libraryDbContext.QuyenSaches.ToList();
         }
 
+        public List<QuyenSach> GetBorrowedBooks(string idDocGia)
+        {
+            return _libraryDbContext.DongPhieuMuons
+                .Where(dpm => dpm.NgayTraSach.Value == null && dpm.PhieuMuon.IDDocGia.Equals(idDocGia))
+                .Select(dpm => dpm.QuyenSach)
+                .ToList();
+        }
+
         public List<QuyenSach> GetAvailable(int idDauSach, int soLuong)
         {
             List<QuyenSach> availablebooks = new List<QuyenSach>();

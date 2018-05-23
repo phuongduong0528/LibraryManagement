@@ -97,6 +97,17 @@ namespace LibraryManagement.DbManager.Controller
             return tgs;
         }
 
+        public List<object> GetListNumberOfBooks()
+        {
+            List<object> result = new List<object>();
+            foreach (TacGia tg in _libraryDbContext.TacGias)
+            {
+                result.Add(new{tg.ID,tg.TenTacGia,tg.DauSaches.Count});
+            }
+
+            return result;
+        }
+
         public int FindIdByName(string name)
         {
             TacGia tacGia = _libraryDbContext.TacGias.SingleOrDefault(tg => tg.TenTacGia.Equals(name));
